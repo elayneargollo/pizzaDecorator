@@ -6,7 +6,7 @@
   
 ## Tela a ser implementada
   
-![Alt text](https://github.com/elayneargollo/pizza/blob/main/tela.png?raw=true "Pizzaria")
+![Alt text](https://github.com/elayneargollo/pizzaDecorator/blob/main/src/imagens/tela.png?raw=true "Pizzaria")
   
 ## INF011-20211-T4
  
