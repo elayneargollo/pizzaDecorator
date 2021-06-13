@@ -1,13 +1,11 @@
 package interfaceGrafica;
 
 import java.awt.BorderLayout;
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
-import main.Principal;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,16 +16,17 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import main.Principal;
+import mensage.Resource;
 
 public class TelaInicial extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static final String MSG_ERRO_REMOVE = "There are no items to remove";
-	private static final String MSG_ERRO = "There is no way to move this item";
 
 	private Principal leading;
 	private JPanel panel, contentPane;
 	private JButton btnAddList, btnRemoveList, btnAddListAll, btnRemoveListAll, btnUp, btnDrop, btnSend;
+	private Resource resource;
 
 	public TelaInicial() {
 		this.leading = new Principal();
@@ -37,13 +36,15 @@ public class TelaInicial extends JFrame {
 	}
 
 	private void setElements() {
-		
+
+		this.resource = new Resource();
+
 		URL path = null;
 		
-		 try {
-			path = new URL("https://image.freepik.com/fotos-gratis/cortar-pizza-no-preto_23-2147749510.jpg");
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
+		try {
+			path = new URL(resource.getPathImage());
+		} catch (MalformedURLException error) {
+			System.out.println(error);
 		}
 
 		this.panel = new CustomizacaoPainel(path);
@@ -100,7 +101,7 @@ public class TelaInicial extends JFrame {
 	private void settingWindow() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Pizzaria Decorator");
+		setTitle(resource.getTitle());
 		setBounds(100, 100, 513, 380);
 		setResizable(false);
 		
@@ -112,7 +113,7 @@ public class TelaInicial extends JFrame {
 		panel.setLayout(null);
 		panel.setOpaque(false);
 		
-		this.setIconImage(new ImageIcon(getClass().getResource("/imagens/pizza.jpg")).getImage());
+		this.setIconImage(new ImageIcon(getClass().getResource(resource.getPathLogo())).getImage());
 	
 	}
 	
@@ -167,7 +168,7 @@ public class TelaInicial extends JFrame {
 					listChosenFlavors.setSelectedIndex(0);
 
 				} else {
-					JOptionPane.showMessageDialog(null, MSG_ERRO_REMOVE);
+					JOptionPane.showMessageDialog(null, resource.getErroRemove());
 				}
 
 			}
@@ -211,11 +212,11 @@ public class TelaInicial extends JFrame {
 						listChosenFlavors.setSelectedIndex(selection - 1);
 
 					} else {
-						JOptionPane.showMessageDialog(null, MSG_ERRO);
+						JOptionPane.showMessageDialog(null, resource.getErro());
 					}
 
 				} else {
-					JOptionPane.showMessageDialog(null, MSG_ERRO_REMOVE);
+					JOptionPane.showMessageDialog(null, resource.getErroRemove());
 				}
 
 			}
@@ -236,11 +237,11 @@ public class TelaInicial extends JFrame {
 						listChosenFlavors.setSelectedIndex(selection + 1);
 
 					} else {
-						JOptionPane.showMessageDialog(null, MSG_ERRO);
+						JOptionPane.showMessageDialog(null, resource.getErroRemove());
 					}
 
 				} else {
-					JOptionPane.showMessageDialog(null, MSG_ERRO_REMOVE);
+					JOptionPane.showMessageDialog(null, resource.getErroRemove());
 				}
 
 			}

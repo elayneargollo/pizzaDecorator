@@ -9,29 +9,29 @@ import javax.swing.JPanel;
 
 class CustomizacaoPainel extends JPanel {
 
-		private static final long serialVersionUID = 1L;
-		private Image background;
+	private static final long serialVersionUID = 1L;
+	private Image background;
 
-        public CustomizacaoPainel(URL path) {
-            this.background = new ImageIcon(path).getImage();
-            setOpaque(false);
-            setPreferredSize(new Dimension(getWidth(), getHeight()));
-        }
+    public CustomizacaoPainel(URL path) {
+        this.background = new ImageIcon(path).getImage();
+        setOpaque(false);
+        setPreferredSize(new Dimension(getWidth(), getHeight()));
+    }
 
-        @Override
-        protected void paintComponent(Graphics g) {
-            g.drawImage(background, 0, 0, this);
-            super.paintComponent(g);
-        }
+    @Override
+    protected void paintComponent(Graphics graphics) {
+        graphics.drawImage(background, 0, 0, this);
+        super.paintComponent(graphics);
+    }
 
-        @Override
-        public int getWidth() {
-            return background.getWidth(this);
-        }
+    @Override
+    public int getWidth() {
+        return background.getWidth(this);
+    }
 
-        @Override
-        public int getHeight() {
-            return background.getHeight(this);
-        }
+    @Override
+    public int getHeight() {
+        return background.getHeight(this);
+    }
 
 }
