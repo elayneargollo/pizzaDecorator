@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="plugins/|plugins/|plugins/" kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="src/plugins/SalameDecorator.jar"/>
+	<classpathentry kind="lib" path="src/plugins/CalabresaDecorator.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
