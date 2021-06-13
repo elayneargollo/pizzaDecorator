@@ -3,14 +3,14 @@ package decorators;
 import interfaces.PizzaComponent;
 import interfaces.PizzaDecorator;
 
-public class PresuntoDecorator extends PizzaDecorator {
+public class AzeitonaDecorator extends PizzaDecorator {
 	
-    public PresuntoDecorator(PizzaComponent decorated) {
+    public AzeitonaDecorator(PizzaComponent decorated) {
         this.decorated = decorated;
     }
     
     public void preparar() {
         decorated.preparar();
-        System.out.println("Colocando o presunto");
+        System.out.println("Colocando azeitona");
     }
 }

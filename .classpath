@@ -4,5 +4,7 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="src/plugins/SalameDecorator.jar"/>
 	<classpathentry kind="lib" path="src/plugins/CalabresaDecorator.jar"/>
+	<classpathentry kind="lib" path="src/plugins/AzeitonaDecorator.jar"/>
+	<classpathentry kind="lib" path="src/plugins/PresuntoDecorator.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
